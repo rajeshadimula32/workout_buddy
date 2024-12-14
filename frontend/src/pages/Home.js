@@ -10,12 +10,8 @@ const Home = () => {
   const {workouts, dispatch} = useWorkoutsContext()
   const {user} = useAuthContext()
 
-  console.log("home component rendered")
-
   useEffect(() => {
-    console.log("use effect called in home")
     const fetchWorkouts = async () => {
-      console.log("fetch workout called")
       const response = await fetch('/api/workouts', {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
